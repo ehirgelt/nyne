@@ -28,8 +28,8 @@ var AcmeHelpers = []string{
 
 // Menu contains the menu options that should be written to the tag
 var Menu = []string{
-	" Put  ", "Undo  ", "Redo  ", "win", "\n",
-	"|com  ", "|a-  ", "|a+  ", "Ldef  ", "Lrefs  ", "Lcomp",
+	"Put ", "Undo ", "Redo ", "win ",
+	"|com  ", "|a-  ", "|a+  ", "Ldef ", "Lrefs ", "Lcomp ", "rgn ",
 }
 
 // Config maps file extensions to their formatting specification
@@ -149,8 +149,8 @@ var Filetypes = []Filetype{
 	{
 		Name:       "text",
 		Extensions: []string{".txt"},
-		Tabwidth:   8,
-		Tabexpand:  false,
+		Tabwidth:   4,
+		Tabexpand:  true,
 		Comment:    "# ",
 		Commands:   []Command{},
 	},
