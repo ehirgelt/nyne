@@ -43,11 +43,6 @@ func (a *Acme) Listen() error {
 			return err
 		}
 
-		// skip directory windows
-		if strings.HasSuffix(event.Name, "/") {
-			continue
-		}
-
 		// create listener on new window events
 		if event.Op == "new" {
 			go a.startBuf(event.ID)

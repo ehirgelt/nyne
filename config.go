@@ -141,7 +141,7 @@ var Filetypes = []Filetype{
 	{
 		Name:       "makefile",
 		Extensions: []string{"Makefile"},
-		Tabwidth:   8,
+		Tabwidth:   4,
 		Tabexpand:  false,
 		Comment:    "# ",
 		Commands:   []Command{},
@@ -157,7 +157,7 @@ var Filetypes = []Filetype{
 	{
 		Name:       "shell",
 		Extensions: []string{".rc", ".sh"},
-		Tabwidth:   8,
+		Tabwidth:   4,
 		Tabexpand:  false,
 		Comment:    "# ",
 		Commands:   []Command{},
@@ -165,7 +165,7 @@ var Filetypes = []Filetype{
 	{
 		Name:       "c",
 		Extensions: []string{".c", ".h"},
-		Tabwidth:   8,
+		Tabwidth:   4,
 		Tabexpand:  false,
 		Comment:    "/* */",
 		Commands:   []Command{},
@@ -176,6 +176,14 @@ var Filetypes = []Filetype{
 		Tabwidth:   2,
 		Tabexpand:  true,
 		Comment:    "<!-- -->",
+		Commands:   []Command{},
+	},
+	{
+		Name:       "python",
+		Extensions: []string{".py"},
+		Tabwidth:   4,
+		Tabexpand:  true,
+		Comment:    "# ",
 		Commands:   []Command{},
 	},
 	{
@@ -235,17 +243,23 @@ var Filetypes = []Filetype{
 	{
 		Name:       "go",
 		Extensions: []string{".go", "go.mod", "go.sum"},
-		Tabwidth:   8,
+		Tabwidth:   4,
 		Tabexpand:  false,
 		Comment:    "// ",
-		Commands:   []Command{
-			// {
-			// 	Exec: "gofmt",
-			// 	Args: []string{
-			// 		"$NAME",
-			// 	},
-			// 	PrintsToStdout: true,
-			// },
+		Commands: []Command{
+			{
+				Exec:           "gofmt",
+				Args:           []string{"$NAME"},
+				PrintsToStdout: true,
+			},
 		},
+	},
+	{
+		Name:       "directory",
+		Extensions: []string{"/"},
+		Tabwidth:   4,
+		Tabexpand:  false,
+		Comment:    "",
+		Commands:   []Command{},
 	},
 }
